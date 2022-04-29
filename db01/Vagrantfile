@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+  # Máquina
+  config.vm.box = "centos/7"
+  # Nome da máquina
+  config.vm.hostname = "db01"
+  config.vm.network "private_network", ip: "192.168.2.4"
+  # Porta padrão do mysql
+  config.vm.network "forwarded_port", guest: 3306, host: 3306 
+  # Para rodar quando subir a máquina e adicionar a key
+  config.vm.provision "shell", path: "provision.sh"
+end
