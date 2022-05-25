@@ -50,5 +50,30 @@
         src: application.properties
         dest: /opt/notes/src/main/resources/application.properties
     - name: Gerar pacote da aplicação
-      command: mvn -f /opt/notes.pom.xml package
+      command: mvn -f /opt/notes/pom.xml package
       become_user: app
+    - name: Registrar versão atual do pacote
+      shell:
+        cmd: mvn -o -q -Dexec.executable=echo -Dexec.args='${project.version}'
+        chdir: /opt/hosts
+      register: app_version
+    - name: Configurar servico do systemd
+      templates:
+        src: etc/systemd/system/notes.service
+        dest: /etc/systemd/system/notes.service
+        notify: reload daemon
+    - name: Iniciar o serviço notes
+      service:
+        name: notes
+        state: restarted
+  roles: 
+    - configuracao-default-so
+  handlers: 
+    - name: reload app
+      systemd:
+        state: restarted
+        daemon_reload: yes
+        name: 'notes' 
+    - name: reload daemon
+      systemd: 
+        daemon_reexec: yes
