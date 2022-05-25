@@ -1,1 +1,1 @@
-{"nfs":{"/vagrant":{"type":"nfs","guestpath":"/vagrant","hostpath":"/C/Users/lucas/OneDrive/Cursos/lab-ansible/control-node","disabled":false,"__vagrantfile":true,"map_uid":0,"map_gid":0,"nfs_version":3,"nfs_udp":true,"uuid":"3607934588","mount_options":["vers=3","udp","nolock"]}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/lucas/Desktop/lab-ansible/control-node","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
