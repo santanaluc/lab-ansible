@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible.json#/definitions/playbook": "file:///c%3A/Users/lucas/OneDrive/Cursos/lab-ansible/control-node/playbooks/db.yaml"
-    }
-}
