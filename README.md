@@ -1,5 +1,6 @@
-# lab-ansible
-Laboratório aprendendo IaC com Ansible
+# laboratório ansible
+Laboratório utilizando Java, Ansible e Vagrant 
+
 How to use:
 
 Download do repo
